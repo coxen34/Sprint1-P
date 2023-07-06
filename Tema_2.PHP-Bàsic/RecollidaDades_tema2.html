@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 2 PHP Bàsics</title>
+    <style>
+      .container {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border: solid 3px black;
+        gap: 1em;
+      }
+      .form1,
+      h3,
+      p {
+        margin: auto;
+        justify-content: center;
+        align-content: center;
+      }
+      .button1 {
+        margin-left: 29%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--!     EXERCICI_1 - Nivell 1      -->
+    <div class="container">
+      <h3>Nivell1</h3>
+      <h3>Exercici1,2,3a</h3>
+      <form class="form1" method="post" action="Excs.Tema2.php">
+        <div>
+          <input class="button" type="submit" name="button" value="Resultat" />
+        </div>
+      </form>
+    </div>
+    <br />
+    <!--!     EXERCICI_3b - Nivell 1      -->
+    <div class="container">
+      <h3>Nivell1</h3>
+      <h3>Exercici 3b</h3>
+      <form class="form1" method="post" action="Excs.Tema2.php">
+        <div>
+          <input
+            type="number"
+            step="any"
+            name="num1"
+            placeholder="Introdueix un número"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            step="any"
+            name="num2"
+            placeholder="Introdueix un número"
+          />
+        </div>
+        <div>
+          <input type="text" name="simbol" placeholder="Introdueix + - * /" />
+        </div>
+        <div>
+          <input
+            class="button1"
+            type="submit"
+            name="button3b"
+            value="Resultat"
+          />
+        </div>
+      </form>
+    </div>
+    <br />
+    <!--!     EXERCICI4 - Nivell 1      -->
+    <div class="container">
+      <h3>Nivell1</h3>
+      <h3>Exercici 4</h3>
+      <form class="form1" method="post" action="Excs.Tema2.php">
+        <div>
+          <p>Fins a quin nombre vols comptar?</p>
+          <input type="number" name="num1" placeholder="Introdueix un número" />
+        </div>
+        <div>
+          <p>De quant en quant es compta?</p>
+          <input type="number" name="num2" placeholder="Introdueix un número" />
+        </div>
+        <div>
+          <input
+            class="button1"
+            type="submit"
+            name="button4"
+            value="Resultat"
+          />
+        </div>
+      </form>
+    </div>
+    <br />
+    <!--!     EXERCICI_5 - Nivell 1      -->
+    <div class="container">
+      <h3>Nivell1</h3>
+      <h3>Exercici5</h3>
+      <form class="form1" method="post" action="Excs.Tema2.php">
+        <div>
+          <input
+            type="number"
+            name="num1"
+            min="0.1"
+            max="10"
+            step="any"
+            placeholder="Introdueix una nota"
+          />
+        </div>
+        <div>
+          <input class="button" type="submit" name="button5" value="Resultat" />
+        </div>
+      </form>
+    </div>
+    <br />
+    <!--!     EXERCICI_6 - Nivell 1      -->
+    <div class="container">
+        <h3>Nivell1</h3>
+        <h3>Exercici6</h3>
+        <form class="form1" method="post" action="Excs.Tema2.php">
+          <div>
+            <input class="button" type="submit" name="button6" value="Resultat" />
+          </div>
+        </form>
+      </div>
+      <br />
+    <!-- !EXERCICI1 Nivell2 -->
+    <div class="container">
+        <h3>Nivell2</h3>
+        <h3>Exercici1</h3>
+        <br />
+        <form class="form1" method="post" action="Excs.Tema2.php">
+          <div>
+            <input
+              type="number"
+              name="num"
+              min="0"
+              placeholder="        Duració trucada"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              class="buttonCost"
+              type="submit"
+              name="button7"
+              value="Cost trucada"
+            />
+          </div>
+          <br />
+        </form>
+      </div>
+      <br />
+      <!-- ! EXERCICI 2 Nivell2 -->
+    <div class="container">
+        <h3>Nivell2</h3>
+        <h3>Exercici2</h3>
+        <br />
+        <form class="form1" method="post" action="Excs.Tema2.php">
+          <div>
+            <label for="xocolata">Xocolata</label>
+            <input
+              type="numberxoc"
+              name="numXocolates"
+              min="0"
+              placeholder="Unitats"
+            />
+          </div>
+          <br />
+          <div>
+            <label for="xiclets">Xiclets&nbsp;&nbsp;&nbsp;</label>
+            <input
+              type="number"
+              name="numXiclets"
+              min="0"
+              placeholder="Unitats"
+            />
+          </div>
+          <br />
+          <div>
+            <label for="caramels">Caramels</label>
+            <input
+              type="number"
+              name="numCarmels"
+              min="0"
+              placeholder="Unitats"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              class="buttonCost"
+              type="submit"
+              name="button8"
+              value="Quantitat total"
+            />
+          </div>
+          <br />
+        </form>
+      </div>
+      <br />
+  </body>
+</html>
