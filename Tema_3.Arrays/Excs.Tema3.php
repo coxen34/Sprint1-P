@@ -16,6 +16,9 @@ echo "<br>";
 echo '$integer5 tiene: ' . count($integer5) . ' elementos <br>';
 unset($integer5[0]);
 echo '$integer5 ahora tiene: ' . count($integer5) . ' elementos<br>';
+$integer5 = array_values($integer5);
+echo "<br>Index reorganitzats<br>";
+print_r($integer5);
 
 //!Nivell1 Exercici 3
 echo '<br>---------------<br>';
@@ -23,21 +26,37 @@ echo '<br>---------------<br>';
 $words = array("barcelona", "menorca", "mallorca", "bruselas");
 $character = "A";
 $character = strtolower($character);
+$es = estaCaracter($words, $character);
 
-if (estaCaracter($words, $character)) {
+echo "<br>";
+
+if ($es == 1) {
     echo "True";
 } else {
-    echo 'False';
+    echo "False";
 }
-function estaCaracter(array $words, string $character)
-{
 
-    foreach ($words as $valor) {
-        //strpos→→Retorna la posició on es troba el caràcter
-        $resultado = strpos($valor, $character);
+function estaCaracter($words, $character)
+{
+    $result = false;
+    $characterCount = 0;
+    for ($i = 0; $i < count($words); $i++) {
+        $word = $words[$i];
+
+
+        for ($j = 0; $j < strlen($word); $j++) {
+            if (strtolower($word[$j]) == $character) {
+                $characterCount++;
+                echo "index" .  $i . $word[$j] . "<br>\n";
+                $result = true;
+            }
+        }
     }
-    return  $resultado;
+    echo   $characterCount . " coincidencias";
+    return $result;
 }
+
+
 
 //!Nivell1 Exercici 4
 echo '<br>---------------<br>';
@@ -69,41 +88,20 @@ echo '<br>---------------<br>';
 
 $alumnes = array("David" => array(5, 2, 9, 10, 6), "Marta" => array(10, 9, 7, 6, 9), "Carme" => array(5, 10, 9.5, 10, 3.5));
 
-mitjaNotesAlumne($alumnes);
+mitjaNotes($alumnes);
 echo "<br>";
-mitjaNotesClasse($alumnes);
 
-//?Mostrar les notes
-// foreach ($alumnes as $alumne => $notes) {
-//     echo "Notas $alumne :";
-//     foreach($notes as $nota){
-//         echo" $nota";
-//     }
-//     echo "<br>";
-// }
-// echo "<br>";
-function mitjaNotesAlumne(array $alumnes)
+function mitjaNotes(array $alumnes)
 {
-    //? Calcular la mitja de la nota de cada alumne
     foreach ($alumnes as $alumne => $notes) {
         $totalNotes = count($notes);
         $sumaNotes = array_sum($notes);
+        //? Calcular la mitja de notes de cada alumne
         $mitjaAlumne = $sumaNotes / $totalNotes;
+        $mitjaNotes[] = $mitjaAlumne;
         echo "Mitja notes $alumne: " . round($mitjaAlumne, 1) . "<br>";
     }
-    return $mitjaAlumne;
-}
-function mitjaNotesClasse(array $alumnes)
-{
     //? Calcular la mitja de notes de la classe sencera
-    $totalAlumnes = count($alumnes);
-    $sumaNotesClasse = 0;
-
-    foreach ($alumnes as $notes) {
-        $sumaNotesClasse += array_sum($notes);
-    }
-
-    $mitjaNotesClasse = ($sumaNotesClasse / 5) / $totalAlumnes;
-    echo "Mitja notes classe: " . round($mitjaNotesClasse, 1);
-    return $mitjaNotesClasse;
+    echo "Mitja notes classe" . array_sum($mitjaNotes) / count($alumnes);
+    return $mitjaNotes;
 }
