@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulari</title>
+    <style>
+      .container {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border: solid 3px black;
+        gap: 1em;
+      }
+      form div {
+        margin-top: 10px;
+        display: flex;
+        flex-direction:column;
+      }
+      div label, ::placeholder{
+        text-align: center;
+      }
+      .form,
+      h3,
+      p {
+        margin: auto;
+        justify-content: center;
+        align-content: center;
+      }
+      .button {
+        margin-bottom: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ! Nivell 1 Exercici 1 i 2-->
+    <div class="container">
+      <!-- <h3>Nivell1</h3>
+      <h3>Exercici1</h3> -->
+      <form class="form" method="post" action="index.php">
+        <div>
+          <label for="nom">Nom</label>
+          <input type="text" name="nom" placeholder="Introdueix nom" />
+        </div>
+        <div>
+          <label for="mail">Mail</label>
+          <input type="email" name="mail" placeholder="Introdueix e-mail" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            minlength="8"
+            maxlength="8"
+            placeholder="Introdueix pasword"
+          />
+        </div>
+        <br>
+        <div>
+          <input class="button" type="submit" name="button" value="Envia" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
