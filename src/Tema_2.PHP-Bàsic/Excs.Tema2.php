@@ -89,15 +89,19 @@ function calculadora(float $num1, float $num2, string $simbol)
 }
 //!----------Exercici 4 Nivell1----------
 if (isset($_POST["button4"])) {
-    $num1 = $_POST["num1"];
-    $num2 = $_POST["num2"];
-    if (empty($num1)) {
+    $num1 = isset($_POST["num1"]) ? intval ($_POST["num1"]):10;
+    $num2 = isset($_POST["num2"])? intval ($_POST["num2"]):1;
+     if (empty($num1)) {
         $num1 = 10;
-    }
+    } 
     echo comptar($num1, $num2);
 }
-function comptar(int $num1, int $num2)
+function comptar(int $num1=10, int $num2=1)
 {
+    if ($num2 == 0) {
+        echo "El incremento no puede ser cero.";
+        return;
+    }
 
     for ($i = 0; $i <= $num1; $i = $i + $num2) {
         echo "<br>" . $i;
